@@ -1,7 +1,3 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
 class Solution
 {
   public:
@@ -78,16 +74,3 @@ class Solution
 		return 0.0;
 	}
 };
-
-int main()
-{
-	vector<int> a;
-	vector<int> b;
-	a.push_back(1);
-	a.push_back(2);
-	b.push_back(-1);
-	b.push_back(3);
-	Solution s;
-	cout << "Hanyuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"<<"\n";
-	cout << s.findMedianSortedArrays(a, b);
-}
