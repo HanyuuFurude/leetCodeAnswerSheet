@@ -1,49 +1,70 @@
-class Solution {
-public:
-    string longestPalindrome(string s) {
-        int strLength  = s.size();
-        if (length == 1)
-        {
-            return s;
-        }
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Solution
+{
+  public:
+    string longestPalindrome(string s)
+    {
+        int strLength = s.size();
+        // if (strLength == 1)
+        // {
+        //     return s;
+        // }
         int key = 0;
-        int length = 1;
-        for (int i = 1; i < strLength - 1; ++i)
+        int length = 0;
+        for (int i = 0; i < strLength; ++i)
         {
-            int j = 1;
-            while(i-j>=0&&i+j<strLength)
+            int j = 0;
+            while (i - j >= 0 && i + j < strLength)
             {
-                if (s[i-j]!=s[i+j]) 
+                if (s[i - j] != s[i + j])
                 {
-                    if (2*j+1>length)
+                    if (2 * j - 1 > length)
                     {
-                        key=i-j;
-                        length = 2*j+1;
+                        key = i - j + 1;
+                        length = 2 * j - 1;
                     }
                     break;
                 }
                 ++j;
             }
+            if (2 * j - 1 > length)
+            {
+                key = i - j + 1;
+                length = 2 * j - 1;
+            }
         }
-        
-        for (int i = 1; i < strLength - 1; ++i)
+
+        for (int i = 0; i < strLength; ++i)
         {
             int j = 1;
-            while(i-j+1>=0&&i+j<strLength)
+            while (i - j + 1 >= 0 && i + j < strLength)
             {
-                if (s[i-j+1]!=s[i+j]) 
+                if (s[i - j + 1] != s[i + j])
                 {
-                    if (2*j>length)
+                    if (2 * j - 2 > length)
                     {
-                        key=i-j+1;
-                        length = 2*j+1;
+                        key = i - j + 2;
+                        length = 2 * j - 2;
                     }
                     break;
                 }
                 ++j;
             }
+            if (2 * j - 2 > length)
+            {
+                key = i - j + 2;
+                length = 2 * j - 2;
+            }
         }
-        if(r==0)return s.substr(0,1);
-        return s.substr(l,r);
+        return s.substr(key, length);
     }
 };
+int main()
+{
+    string a("a");
+    Solution b;
+    cout << b.longestPalindrome(a)<<endl;
+}
