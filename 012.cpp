@@ -1,9 +1,13 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
 class Solution
 {
 public:
     string intToRoman(int num)
     {
-        char[] charset = "IVXLCDM";
+        char charset[] = "IVXLCDM";
         string res = "";
         string temp = "";
         int ptr = 0;
@@ -12,29 +16,42 @@ public:
             temp = "";
             int cut = num % 10;
             num /= 10;
-
-            switch (cut)
+            if (cut == 4)
             {
-            case 4:
-                temp = charset[ptr] + charset[ptr + 1];
-                break;
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-                temp = charset[ptr + 1];
-                temp -= 5;
-            default:
-                for (int i = 0; i < temp; ++i)
+                temp = temp + charset[ptr] + charset[ptr + 1];
+            }
+            else if (cut == 9)
+            {
+                temp = temp + charset[ptr] + charset[ptr + 2];
+            }
+            else
+            {
+                if (cut >= 5)
+                {
+                    cut -= 5;
+                    temp = charset[ptr + 1];
+                }
+                for (int i = 0; i < cut; ++i)
                 {
                     temp += charset[ptr];
                 }
-                break;
             }
-            res += temp;
+            res = temp + res;
             ptr += 2;
         }
         return res;
     }
 };
+int main(int argc, char *argv[])
+{
+    // int input;
+    // cin >> input;
+    string res;
+    Solution solution;
+    for (int i = 0; i < 100; ++i)
+    {
+        res = solution.intToRoman(i);
+        cout << i << '\t' << res << '\n';
+    }
+    return 0;
+}
