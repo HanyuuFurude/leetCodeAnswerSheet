@@ -1,3 +1,4 @@
+#include <limits.h>
 class Solution
 {
   public:
