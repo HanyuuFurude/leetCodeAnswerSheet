@@ -11,27 +11,23 @@ public partial class Solution
         int min = lis[0] + lis[1] + lis[2];
         for (var i = 0; i < lis.Count; ++i)
         {
-            for (var j = i + 1; j < lis.Count-1; ++j)
+            int left = i + 1;
+            int right = lis.Count - 1;
+            while(left<right)
             {
-                int k = (j + lis.Count) / 2;
-                int tmp = lis[i] + lis[j];
-                int tmpMin = tmp + lis[j+1];
-                bool changed = false;
-                while (k > j && k < lis.Count)
+                int tmpRes = lis[i] + lis[left] + lis[right];
+                if(tmpRes>target)
                 {
-                    int calcRes = lis[k] + tmp;
-                    if (calcRes > target)
-                    { --k; if (Math.Abs(calcRes - target) > Math.Abs(tmpMin - target)) { break; } tmpMin = calcRes; }
-                    else if (calcRes < target)
-                    { ++k; if (Math.Abs(calcRes - target) > Math.Abs(tmpMin - target)) { break; } tmpMin = calcRes; }
-                    else if (calcRes == target)
-                    { return target; }
-                    changed = true;
+                    --right;
+                    min = Math.Abs(min - target) > Math.Abs(tmpRes - target) ? tmpRes : min;
                 }
-                if (changed)
+                if(tmpRes<target)
                 {
-                    min = Math.Abs(min - target) > Math.Abs(tmpMin - target) ? tmpMin : min;
+                    ++left;
+                    min = Math.Abs(min - target) > Math.Abs(tmpRes - target) ? tmpRes : min;
                 }
+                if(tmpRes==target)
+                { return target; }
             }
         }
         return min;
