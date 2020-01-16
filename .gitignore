@@ -2,3 +2,5 @@
 *.exe
 src/bin
 src/obj/
+src/.vs/src/v16
+src/.vs/src/DesignTimeBuild
