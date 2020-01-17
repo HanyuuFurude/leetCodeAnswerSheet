@@ -7,9 +7,11 @@ namespace src
         static void Main(string[] args)
         {
             Solution a = new Solution();
-            int[] test = {-55, -24, -18, -11, -7, -3, 4, 5, 6, 9, 11, 23, 33};
-            int target = 0;
-            var res = a.ThreeSumClosest(test,target);
+            var res = a.LetterCombinations("73465");
+            foreach(var i in res)
+            {
+                Console.WriteLine(i);
+            }
             Console.WriteLine(res);
         }
     }
