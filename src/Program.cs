@@ -7,12 +7,18 @@ namespace src
         static void Main(string[] args)
         {
             Solution a = new Solution();
-            var res = a.LetterCombinations("73465");
+            int[] demo = {1, 0, -1, 0, -2, 2};
+            int target = 0;
+            var res = a.FourSum(demo, target);
             foreach(var i in res)
             {
-                Console.WriteLine(i);
+                foreach(var j in i)
+                {
+                    Console.Write($"{j}\t");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine(res);
+            //Console.WriteLine(res);
         }
     }
 }
