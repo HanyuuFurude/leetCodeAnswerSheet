@@ -38,20 +38,28 @@ public partial class Solution
         foreach(var i in res)
         {
             bool repeat = false;
+
             foreach (var j in newRes)
             {
-            bool same = true;
-                for(var k = 0;k<4;++k)
+                bool same = true;
+                for (var k = 0; k < 4; ++k)
                 {
-                    if(i[k]!=j[k])
+                    if (i[k] != j[k])
                     {
                         same = false;
                         break;
                     }
                 }
+                if (same)
+                { repeat = true; break; }
+            }
+            if(!repeat)
+            {
+                newRes.Add(i);
             }
         }
 
+        res = newRes;
         return res;
     }
 }
