@@ -7,9 +7,9 @@ namespace src
     {
         static void Main(string[] args)
         {
-            Solution a = new Solution();
-            ListNode b = new ListNode(1);
-            var res = a.RemoveNthFromEnd(b, 1);
+            var a = new Solution();
+            var res = a.IsValid(")");
+            Console.WriteLine(res);
 
         }
     }
