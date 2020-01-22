@@ -8,7 +8,7 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var res = a.GenerateParenthesis(0);
+            var res = a.GenerateParenthesis(3);
             foreach(var i in res)
             {
                 Console.WriteLine(i);

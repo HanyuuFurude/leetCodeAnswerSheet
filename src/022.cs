@@ -18,15 +18,15 @@ public partial class Solution
             List<int> tmpCount = new List<int>();
             for(var j = 0;j<table.Count;++j)
             {
-                if(count[j]>0)
-                {
-                    tmpRes.Add(table[j] + ")");
-                    tmpCount.Add(count[j] - 1);
-                }
                 if(count[j]<n-i)
                 {
                     tmpRes.Add(table[j] + "(");
                     tmpCount.Add(count[j] + 1);
+                }
+                if(count[j]>0)
+                {
+                    tmpRes.Add(table[j] + ")");
+                    tmpCount.Add(count[j] - 1);
                 }
             }
             table = tmpRes;
