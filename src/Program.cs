@@ -8,9 +8,11 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var res = a.IsValid(")");
-            Console.WriteLine(res);
-
+            var res = a.GenerateParenthesis(0);
+            foreach(var i in res)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
