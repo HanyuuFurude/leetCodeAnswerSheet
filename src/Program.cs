@@ -9,7 +9,7 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var res = a.StrStr("mississippi", "issip ");
+            var res = a.Divide(int.MaxValue, 1);
             Console.WriteLine(res);
 
         }
