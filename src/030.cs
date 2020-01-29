@@ -41,7 +41,7 @@ public partial class Solution
                     for (var i = 0; i < pairCount.Count; ++i)
                     {
                         if (pairCount[i] != window[i])
-                        { ++input; fastskip = true; }
+                        { ++input; fastskip = true; break; }
                     }
                     if(fastskip)
                     { continue; }
