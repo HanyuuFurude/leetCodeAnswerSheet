@@ -9,8 +9,18 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var res = a.Divide(int.MaxValue, 1);
-            Console.WriteLine(res);
+
+            var input = new string[3];
+            input[0] = "bar";
+            input[1] = "foo";
+            input[2] = "the";
+            //input[3] = "good";
+
+            var res = a.FindSubstring("barfoofoobarthefoobarman", input);
+            foreach(var i in res)
+            {
+                Console.WriteLine(i);
+            }
 
         }
     }
