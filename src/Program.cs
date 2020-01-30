@@ -10,17 +10,9 @@ namespace src
         {
             var a = new Solution();
 
-            var input = new string[3];
-            input[0] = "bar";
-            input[1] = "foo";
-            input[2] = "the";
-            //input[3] = "good";
-
-            var res = a.FindSubstring("barfoofoobarthefoobarman", input);
-            foreach(var i in res)
-            {
-                Console.WriteLine(i);
-            }
+            int[] arr = { 4, 5, 6, 7, 1, 2, 3 };
+            var res = a.Search(arr, 3);
+            Console.WriteLine(res);
 
         }
     }
