@@ -10,8 +10,8 @@ namespace src
         {
             var a = new Solution();
 
-            int[] arr = { 4, 5, 6, 7, 1, 2, 3 };
-            var res = a.Search(arr, 3);
+            int[] arr = {  };
+            var res = a.SearchInsert(arr, 8);
             Console.WriteLine(res);
 
         }
