@@ -15,28 +15,11 @@ namespace Number037
     public class C
     {
         public const int width = 9;
-        private bool[][] row = new bool[width][];
-        private bool[][] col = new bool[width][];
-        private bool[][] blo = new bool[width][];
         private char[][] result;
         public C(char[][] board)
         {
             result = board;
-            for (var i = 0; i < width; ++i)
-            { row[i] = new bool[width]; col[i] = new bool[width]; blo[i] = new bool[width]; }
-            for (var i = 0; i < width; ++i)
-            {
-                for (var j = 0; j < width; ++j)
-                {
-                    int res = Convert(result[i][j]);
-                    if (res != -1)
-                    {
-                        row[i][res] = true;
-                        col[j][res] = true;
-                        blo[(i * width + j) / 27 * 3 + (i * width) % 27 % 9 / 3][res] = true;
-                    }
-                }
-            }
+            fill(0, 0);
         }
         private int Convert(char src)
         {
@@ -73,13 +56,15 @@ namespace Number037
         }
         private bool fill(int r, int c)
         {
+            //print();
             int res = Convert(result[r][c]);
             if (res != -1)
             {
-                for (var i = r; i < width; ++i)
+                bool first = true;
+                for (var i = 0; i < width; ++i)
                 {
-                    for (var j = c; j < width; ++j)
-                    { if (Convert(result[r][c]) != -1) { fill(i, j); } }
+                    for (var j = 0; j < width; ++j)
+                    { if (first) { i = r; j = c; first = false; } if (Convert(result[i][j]) == -1) { return fill(i, j); } }
                 }
                 return true;
             }
@@ -88,23 +73,37 @@ namespace Number037
             { used[i] = false; }
             for (var i = 0; i < width; ++i)
             {
-                used[i] = row[r][i] ? true : used[i];
-                used[i] = col[c][i] ? true : used[i];
-                used[i] = blo[r / 3 * 3 + c / 3][i] ? true : used[i];
+                int tempRes = Convert(result[r][i]);
+                if (tempRes != -1) { used[tempRes] = true; }
+                tempRes = Convert(result[i][c]);
+                if (tempRes != -1) { used[tempRes] = true; }
+                tempRes = Convert(result[r / 3 * 3 + i / 3][c / 3 * 3 + i % 3]);
+                if (tempRes != -1) { used[tempRes] = true; }
             }
             for (var i = 0; i < width; ++i)
             {
                 if (used[i] == false)
                 {
                     result[r][c] = Unconvert(i);
-                    row[r][i] = true; col[c][i] = true; blo[r / 3 * 3 + c / 3][i] = true;
-                    if(fill(r,c))
+                    //print();
+                    if (fill(r,c))
                     { return true; }
-                    row[r][i] = false; col[c][i] = false; blo[r / 3 * 3 + c / 3][i] = false;
                     result[r][c] = Unconvert(-1);
                 }
             }
-            return true;
+            return false;
+        }
+        private void print()
+        {
+            for (var i = 0; i < width; ++i)
+            {
+                for (var j = 0; j < width; ++j)
+                {
+                    Console.Write($"{result[i][j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
         }
     }
 }
