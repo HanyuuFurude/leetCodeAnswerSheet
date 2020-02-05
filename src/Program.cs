@@ -9,8 +9,15 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[] demo = { 2,3,1,2,3,1,1,3,4,3};
-            Console.WriteLine(a.Jump(demo));
+            int[] demo = { 1,3,3};
+            var res = a.PermuteUnique(demo);
+            foreach(var i in res)
+            {
+                foreach(var j in i)
+                { Console.Write($"{j} "); }
+                Console.WriteLine();
+            }
+
         }
     }
 }
