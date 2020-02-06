@@ -9,14 +9,15 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[] demo = { 1,3,3};
-            var res = a.PermuteUnique(demo);
-            foreach(var i in res)
+            var res = a.SolveNQueens(4);
+            foreach (var i in res)
             {
-                foreach(var j in i)
-                { Console.Write($"{j} "); }
-                Console.WriteLine();
+                foreach (var j in i)
+                {
+                    Console.WriteLine(j);
+                }
             }
+            Console.WriteLine();
 
         }
     }
