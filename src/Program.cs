@@ -18,19 +18,22 @@ namespace src
             //    }
             //}
             //Console.WriteLine();
-            int[][] test = new int[2][];
-            for (var i = 0; i < 2; ++i)
-            { test[i] = new int[2]; }
-            for (var i = 0; i < 2; ++i)
+            int c = 3, r = 3;
+            int[][] test = new int[r][];
+            for (var i = 0; i < r; ++i)
+            { test[i] = new int[c]; }
+            for (var i = 0; i < r; ++i)
             {
-                for (var j = 0; j < 2; ++j)
+                for (var j = 0; j < c; ++j)
                 {
-                    test[i][j] = i * 2 + j + 1;
+                    test[i][j] = i * c + j + 1;
+                    Console.Write($"{test[i][j]}\t");
                 }
+                Console.WriteLine();
             }
             var res = a.SpiralOrder(test);
             foreach(var i in res)
-            { Console.WriteLine(i); }
+            { Console.Write($"{i} "); }
 
         }
     }

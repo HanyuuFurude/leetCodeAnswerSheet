@@ -6,23 +6,25 @@ public partial class Solution
 {
     public IList<int> SpiralOrder(int[][] matrix)
     {
-        int x = 0, width = matrix.Length - 1, c = matrix.Length / 2;
         List<int> res = new List<int>();
+        if(matrix.Length==0)
+        { return res; }
+        int x = 0, y = 0, layer = 0, height = matrix.Length, width = matrix[0].Length, totcal = height * width;
         do
         {
-            for (var i = x; i < width - x; ++i)
-            { res.Add(matrix[x][i]); }
-            for (var i = x; i < width - x; ++i)
-            { res.Add(matrix[i][width - x]); }
-            for (var i = x; i < width - x; ++i)
-            { res.Add(matrix[width - x][width-i]); }
-            for (var i = x; i < width - x; ++i)
-            { res.Add(matrix[width - i][x]); }
-        } while (++x < c);
-        if((width&1)==0)
-        {
-            res.Add(matrix[c][c]);
-        }
+            while (y < width - layer)
+            { res.Add(matrix[x][y++]); }
+            --y; ++x; if (res.Count == totcal) { break; }
+            while (x < height - layer)
+            { res.Add(matrix[x++][y]); }
+            --x; --y; if (res.Count == totcal) { break; }
+            while (y >= layer)
+            { res.Add(matrix[x][y--]); }
+            ++y; --x; if (res.Count == totcal) { break; }
+            while (x > layer)
+            { res.Add(matrix[x--][y]); }
+            ++x; ++y; ++layer; if (res.Count == totcal) { break; }
+        } while (true);
         return res;
     }
 }
