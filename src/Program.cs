@@ -1,7 +1,5 @@
 ﻿using System;
 
-//using Number19;
-using Number025;
 namespace src
 {
     class Program
@@ -9,32 +7,21 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            //var res = a.SolveNQueens(4);
-            //foreach (var i in res)
-            //{
-            //    foreach (var j in i)
-            //    {
-            //        Console.WriteLine(j);
-            //    }
-            //}
-            //Console.WriteLine();
-            int c = 3, r = 3;
-            int[][] test = new int[r][];
-            for (var i = 0; i < r; ++i)
-            { test[i] = new int[c]; }
-            for (var i = 0; i < r; ++i)
+            //int[] demo = { 2, 2, 1, 0, 4 };
+            int[][] demo = new int[2][];
+            demo[0] = new int[2];
+            demo[1] = new int[2];
+            demo[0][0] = 1;demo[0][1] = 4;
+            demo[1][0] = 4;demo[1][1] = 5;
+            var res = a.Merge(demo);
+            foreach(var i in res)
             {
-                for (var j = 0; j < c; ++j)
+                foreach(var j in i)
                 {
-                    test[i][j] = i * c + j + 1;
-                    Console.Write($"{test[i][j]}\t");
+                    Console.Write($"{j}\t");
                 }
                 Console.WriteLine();
             }
-            var res = a.SpiralOrder(test);
-            foreach(var i in res)
-            { Console.Write($"{i} "); }
-
         }
     }
 }
