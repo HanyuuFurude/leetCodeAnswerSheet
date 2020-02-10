@@ -1,5 +1,6 @@
 ﻿using System;
-
+using PublicClass;
+using PublicTestTool;
 namespace src
 {
     class Program
@@ -7,12 +8,10 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var b = a.GetPermutation(1, 1);
-            Console.WriteLine(b);
-            //for(var i = 1;i<=6;++i)
-            //{
-            //    Console.WriteLine(a.GetPermutation(3, i));
-            //}
+            int[][] demo = new int[1][];
+            demo[0] = new int[1];
+            demo[0][0] = 1;
+            Console.WriteLine(a.UniquePathsWithObstacles(demo));
         }
     }
 }
