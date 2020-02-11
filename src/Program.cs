@@ -8,10 +8,12 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[][] demo = new int[1][];
-            demo[0] = new int[1];
-            demo[0][0] = 1;
-            Console.WriteLine(a.UniquePathsWithObstacles(demo));
+            Console.WriteLine(a.IsNumber("."));
+            Console.WriteLine(a.IsNumber(".3"));
+            Console.WriteLine(a.IsNumber("3."));
+            Console.WriteLine(a.IsNumber("+.2e2"));
+            Console.WriteLine(a.IsNumber("+.e3"));
+            Console.WriteLine(a.IsNumber("+22.e3"));
         }
     }
 }
