@@ -8,9 +8,13 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[] demo = new int[1];
-            demo[0] = 9;
-            a.PlusOne(demo);
+            Console.WriteLine(a.MySqrt(2147483647
+));
+            for (var i = 0; i < 100; ++i)
+            {
+                Console.WriteLine($"{i}\t{a.MySqrt(i)}");
+            }
+
         }
     }
 }

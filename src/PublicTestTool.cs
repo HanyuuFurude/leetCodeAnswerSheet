@@ -18,6 +18,14 @@ namespace PublicTestTool
                     Console.WriteLine();
                 }
             }
+            public static void PrintList(IList<T> src)
+            {
+                foreach(var i in src)
+                {
+                    Console.WriteLine($"{i} ");
+                }
+                Console.WriteLine();
+            }
         }
         public static void PrintLinkList(ListNode src)
         {
