@@ -2,3 +2,6 @@
 
 # CA1305: 指定 IFormatProvider
 dotnet_diagnostic.CA1305.severity = suggestion
+
+# CA1822: 成员 CombinationSum2 不访问实例数据，可标记为 static (在 Visual Basic 中为 Shared)
+dotnet_diagnostic.CA1822.severity = suggestion
