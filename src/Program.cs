@@ -8,14 +8,12 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[] demo =
-                Test.USE<int>.ListToArray(
-                    Test.USE<int>.StringToList(
-                        "[3,2,5,6]"
-                        )
-                    );
-            var res = a.Subsets(demo);
-            Test.USE<int>.PrintMatrix(res);
+            int[] demo = Test.USE<int>.ListToArray(
+                Test.USE<int>.StringToList(
+                    "[1,1,3]"
+                    ));
+            var lenght = a.Search(demo, 0, 0);
+            Console.WriteLine(lenght);
         }
     }
 }
