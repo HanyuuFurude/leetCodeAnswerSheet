@@ -32,8 +32,8 @@ namespace PublicTestTool
             public static T[] ListToArray(List<T> src)
             {
                 T[] array = new T[src.Count];
-                for(var i = 0;i<src.Count;++i)
-                {array[i] = src[i];}
+                for (var i = 0; i < src.Count; ++i)
+                { array[i] = src[i]; }
                 return array;
             }
             public static T[][] ListMatrixToArrayMatrix(List<List<T>> src)
@@ -62,6 +62,25 @@ namespace PublicTestTool
             for (var i = 1; i <= src; ++i)
             { fact *= i; }
             return fact;
+        }
+        public static ListNode StringToListNode(string src)
+        {
+            List<int> tempList = Test.USE<int>.StringToList(src);
+            ListNode head, ptr;
+            if (tempList.Count == 0)
+            { return null; }
+            head = new ListNode(tempList[0]);
+            ptr = head;
+            for (var i = 1; i < tempList.Count; ++i)
+            { ptr.next = new ListNode(tempList[i]); ptr = ptr.next; }
+            return head;
+        }
+        public void printListNode(ListNode head)
+        {
+            ListNode ptr = head;
+            while (ptr != null)
+            { Console.Write($"{ptr.val} "); }
+            Console.WriteLine();
         }
     }
 }
