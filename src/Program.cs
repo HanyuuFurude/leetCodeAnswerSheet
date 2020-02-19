@@ -8,8 +8,9 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var b = a.IsScramble("abcde","acdbe");
-            Console.Write(b);
+            int[] demo = Test.USE<int>.ListToArray(Test.USE<int>.StringToList("[1,2,4,4,4]"));
+            var res = a.SubsetsWithDup(demo);
+            Test.USE<int>.PrintMatrix(res);
         }
     }
 }
