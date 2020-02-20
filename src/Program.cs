@@ -8,9 +8,7 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[] demo = Test.USE<int>.ListToArray(Test.USE<int>.StringToList("[1,2,4,4,4]"));
-            var res = a.SubsetsWithDup(demo);
-            Test.USE<int>.PrintMatrix(res);
+            Console.Write(a.NumDecodings("232254"));
         }
     }
 }
