@@ -8,7 +8,11 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            Console.Write(a.NumDecodings("232254"));
+            var b = a.RestoreIpAddresses("010010");
+            foreach(var i in b)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
