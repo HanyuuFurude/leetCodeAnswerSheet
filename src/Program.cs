@@ -8,7 +8,9 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var b = a.GenerateTrees(4);
+            var b = new TreeNode(int.MaxValue);
+            Console.WriteLine(a.IsValidBST(b));
+
         }
     }
 }
