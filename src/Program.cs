@@ -8,9 +8,12 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            var b = new TreeNode(int.MaxValue);
-            Console.WriteLine(a.IsValidBST(b));
-
+            int[] b = Test.USE<int>.ListToArray(
+                Test.USE<int>.StringToList("[3,1,2,4]"));
+            int[] c = Test.USE<int>.ListToArray(
+                Test.USE<int>.StringToList("[1,2,3,4]"));
+            var res = a.BuildTree(b, c);
+             
         }
     }
 }
