@@ -8,12 +8,10 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[] b = Test.USE<int>.ListToArray(
-                Test.USE<int>.StringToList("[3,1,2,4]"));
             int[] c = Test.USE<int>.ListToArray(
-                Test.USE<int>.StringToList("[1,2,3,4]"));
-            var res = a.BuildTree(b, c);
-             
+                Test.USE<int>.StringToList("[-10,-3,0,5,9]"));
+            var b = a.SortedArrayToBST(c);
+
         }
     }
 }
