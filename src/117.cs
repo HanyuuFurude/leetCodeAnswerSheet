@@ -27,7 +27,7 @@ public class Node {
 */
 public partial class Solution
 {
-    public Node Connect(Node root)
+    public Node Connect(Node root, int removeme = 0)
     {
         if (root == null)
         { return root; }

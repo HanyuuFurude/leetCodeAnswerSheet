@@ -8,10 +8,8 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            int[] c = Test.USE<int>.ListToArray(
-                Test.USE<int>.StringToList("[-10,-3,0,5,9]"));
-            var b = a.SortedArrayToBST(c);
-
+            string[] demo = { "hot", "dot", "dog", "lot", "log", "cog" };
+            a.LadderLength("hit", "dog", demo);
         }
     }
 }
