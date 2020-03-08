@@ -8,8 +8,9 @@ namespace src
         static void Main(string[] args)
         {
             var a = new Solution();
-            string[] demo = { "hot", "dot", "dog", "lot", "log", "cog" };
-            a.LadderLength("hit", "dog", demo);
+            string[] demo = { "hat", "dot", "dog", "lot", "log", "cog" };
+            var res = a.LadderLength("hit", "hot", demo);
+            Console.WriteLine(res);
         }
     }
 }
