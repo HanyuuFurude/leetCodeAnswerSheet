@@ -51,7 +51,7 @@ namespace Number087
         {
             if (s1 == s2) { return true; }
             Dictionary<char, int> cpList = new Dictionary<char, int>();
-            int temp;
+            // int temp;
             foreach (var i in s1)
             {
                 if (cpList.ContainsKey(i))

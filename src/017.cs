@@ -17,7 +17,7 @@ public partial class Solution
         foreach (var i in digits)
         {
             int key = int.Parse(i.ToString());
-            char[] addList;
+            // char[] addList;
             List<string> tmpRes = new List<string>();
             foreach (var j in keyboard[key])
             {
