@@ -26,4 +26,3 @@ class Solution:
                 insertHandle = insertHandle.next
             tempHandle.next = insertHandle.next
             insertHandle.next = tempHandle
-
