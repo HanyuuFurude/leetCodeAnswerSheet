@@ -11,7 +11,6 @@ using PublicClass;
 using System.Collections.Generic;
 public class BSTIterator
 {
-    private TreeNode pointer;
     Stack<TreeNode> path;
     public BSTIterator(TreeNode root)
     {
