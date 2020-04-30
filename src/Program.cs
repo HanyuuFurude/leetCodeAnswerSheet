@@ -8,10 +8,10 @@ namespace src
     {
         static void Main(string[] args)
         {
-            int[][] arr = new int[3][]{
-                new int[3]{ -2, -3, 3},
-                new int[3]{ -5, -10, 1},
-                new int[3]{ 10, 30, -5}
+            int[][] arr = new int[][]{
+                new int[]{-2, -3, 3},
+                new int[]{-5, -10, 1},
+                new int[]{10, 30, -5}
             };
             var a = new Solution();
             int res = a.CalculateMinimumHP(arr);
