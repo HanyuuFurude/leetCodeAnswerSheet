@@ -22,7 +22,7 @@ public class BSTIterator
     public int Next()
     {
         var handle = path.Pop();
-        while (handle.right != null)
+        if (handle.right != null)
         {
             helper(handle.right);
         }
@@ -50,3 +50,4 @@ public class BSTIterator
  * int param_1 = obj.Next();
  * bool param_2 = obj.HasNext();
  */
+ 

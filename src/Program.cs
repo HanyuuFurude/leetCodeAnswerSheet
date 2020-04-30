@@ -8,12 +8,15 @@ namespace src
     {
         static void Main(string[] args)
         {
+            int[][] arr = new int[3][]{
+                new int[3]{ -2, -3, 3},
+                new int[3]{ -5, -10, 1},
+                new int[3]{ 10, 30, -5}
+            };
             var a = new Solution();
-            Console.WriteLine(a.TitleToNumber("A"));
-            Console.WriteLine(a.TitleToNumber("Z"));
-            Console.WriteLine(a.TitleToNumber("AA"));
-            Console.WriteLine(a.TitleToNumber("AZ"));
-            Console.WriteLine(a.TitleToNumber("BA"));
+            int res = a.CalculateMinimumHP(arr);
+            Console.WriteLine(res);
+
         }
     }
 }
