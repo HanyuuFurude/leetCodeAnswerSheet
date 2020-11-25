@@ -1,5 +1,7 @@
 package hanyuu;
 
+import hanyuu.solutions.S1371;
+
 /**
  * Hello world!
  *
