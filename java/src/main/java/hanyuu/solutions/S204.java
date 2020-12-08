@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public interface S204 {
+
     class S204_1 {
         public int countPrimes(int n) {
             List<Integer> primes = new ArrayList<>();
